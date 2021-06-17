@@ -1,0 +1,21 @@
+@import "~bootstrap/scss/bootstrap";
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;600&display=swap');
+
+nav{
+    font-family: 'Oswald', sans-serif;
+}
+
+
+.nav-link{
+    margin-left: 2rem;
+}
+
+
+.cart{
+    margin-left: 3rem;
+    margin-right: 2rem;
+}
+
+.bg-myViolet{
+    background-color: rgba($color: #8548B3, $alpha: 1.0);
+}
