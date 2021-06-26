@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './ItemListContainer.scss';
+import ItemList from './ItemsComponents/ItemList';
+import { pcItems } from '../../pc-items.js';
 
-const ItemListContainer=(props)=> {
+
+
+const ItemListContainer = () => {
+    const [items, setItems] = useState([]);
+    useEffect(() => {
+        setTimeout(() => {
+            setItems(pcItems);
+            console.log(items);
+        }, 2000);
+    });
     return (
-        <h1 className="mensaje">
-            {props.greeting}
-        </h1>
+        <ItemList data={items} />
     )
 }
 
