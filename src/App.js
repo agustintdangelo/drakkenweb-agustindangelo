@@ -4,20 +4,22 @@ import NavBar from './components/NavBar/NavBar';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
+import ItemCount from './components/ItemListContainer/ItemsComponents/ItemCount/ItemCount';
 
 
-class App extends React.Component{
-  render(){
+function App(){
     return (
       <div className="App">
         <header>
           <NavBar logo={logoDrakken}/>
         </header>
         <div>
-          <ItemListContainer greeting='Bienvenidos a Drakken, donde encontrás lo que querés para tu pc.'/>
+          <ItemListContainer/>
+        </div>
+        <div>
+          <ItemCount/>
         </div>
       </div>
     );
-  }
 }
 export default App;
