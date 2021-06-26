@@ -1,5 +1,5 @@
 import React from 'react';
-import {Nav, Navbar, NavDropdown, Button, FormControl, Form} from 'react-bootstrap';
+import {Nav, Navbar, Button, FormControl, Form} from 'react-bootstrap';
 import CartWidget from './CartWidget';
 import './NavBar.scss';
 
@@ -24,8 +24,8 @@ const NavBar = (props) => {
                     <Nav.Link href="">Contacto</Nav.Link>
                 </Nav>
                 <Form inline>
-                    <FormControl type="text" placeholder="Search" className="mr-sm-2" width="20" />
-                    <Button variant="outline-light">Search</Button>
+                    <FormControl type="text" placeholder="Buscar en Drakken" className="mr-sm-2" width="20" />
+                    <Button variant="outline-light">Buscar</Button>
                 </Form>
                 <CartWidget/>
             </Navbar.Collapse>
