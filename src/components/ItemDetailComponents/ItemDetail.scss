@@ -1,0 +1,15 @@
+@import "~bootstrap/scss/bootstrap";
+
+.image-detail{
+    width:50%;
+}
+
+.agregar-carrito{
+    display:flex;
+    flex-direction: column-reverse;
+    background:green;
+}
+
+.precio{
+    font-size: 80px;
+}
