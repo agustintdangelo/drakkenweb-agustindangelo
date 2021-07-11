@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ItemListContainer.scss';
 import ItemList from './ItemsComponents/ItemList';
-
+import {useCartContext} from '../Context/CartContext';
 import { useParams } from 'react-router-dom';
 
 
@@ -9,15 +9,16 @@ import { useParams } from 'react-router-dom';
 const ItemListContainer = () => {
     const [items, setItems] = useState([]);
     const {categoryName}=useParams();
-    
+    const { database } = useCartContext();
     
     useEffect(() => {
-       
-        fetch("https://mocki.io/v1/9f8e1546-6c7d-4cb9-a4b9-7371f978a6b0")
-        .then(res=> res.json())
-        .then((responseItems)=>{
-            !categoryName?setItems(responseItems):setItems(responseItems.filter(item=>item.category===categoryName))});      
-    },[categoryName])
+        if(!categoryName){
+            setItems(database);
+        }else{
+            setItems(database.filter(item=>item.category===categoryName));
+        }
+                  
+    },[categoryName, database])
 
     return (
         <ItemList data={items} />

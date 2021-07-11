@@ -52,7 +52,9 @@ const NavBar = (props) => {
                     <FormControl type="text" placeholder="Buscar en Drakken" className="mr-sm-2" width="20" />
                     <Button variant="outline-light">Buscar</Button>
                 </Form>
-                <CartWidget />
+             
+                    <CartWidget />
+               
             </Navbar.Collapse>
         </Navbar>
 
