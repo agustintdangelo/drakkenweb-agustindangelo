@@ -20,11 +20,7 @@ export const CartProvider = ({ children }) => {
           return { ...cartElement, quantity: cartElement.quantity + quantity }
         } else return cartElement;
       })
-     
-      
-      
       setCart(newCart);
-    
     } else {
       setCart(prev => [...prev, { ...item, quantity }]);
     }

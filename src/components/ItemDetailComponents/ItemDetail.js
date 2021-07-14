@@ -17,8 +17,7 @@ export const ItemDetail = (product) => {
         <div className="cards mx-auto my-3 border border-black rounded">
             <h2 className="text-center">{product.title}</h2>
             <img className="image-detail" src={product.pictureUrl} alt="" />
-            <h6>Categoría: {product.category}</h6>
-            
+            <h6>Categoría: {product.category}</h6>      
             <h6>Detalle: {product.description}</h6>
         </div>
         </Col>
