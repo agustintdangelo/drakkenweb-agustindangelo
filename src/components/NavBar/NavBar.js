@@ -41,12 +41,8 @@ const NavBar = (props) => {
 
                     </NavDropdown>
 
-
-
-
                     <Nav.Link >Contacto</Nav.Link>
                 </Nav>
-
 
                 <Form inline>
                     <FormControl type="text" placeholder="Buscar en Drakken" className="mr-sm-2" width="20" />

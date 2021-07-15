@@ -1,28 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import './ItemListContainer.scss';
+import React, { useState, useEffect } from "react";
+import "./ItemListContainer.scss";
+
+import { useParams } from "react-router-dom";
+import {itemsCollection } from '../../firebase';
 import ItemList from './ItemsComponents/ItemList';
-import {useCartContext} from '../Context/CartContext';
-import { useParams } from 'react-router-dom';
-
-
 
 const ItemListContainer = () => {
-    const [items, setItems] = useState([]);
-    const {categoryName}=useParams();
-    const { database } = useCartContext();
-    
-    useEffect(() => {
-        if(!categoryName){
-            setItems(database);
-        }else{
-            setItems(database.filter(item=>item.category===categoryName));
-        }
-                  
-    },[categoryName, database])
+  const [items, setItems] = useState([]);
+  const { categoryName } = useParams();
 
-    return (
-        <ItemList data={items} />
-    )
-}
+  useEffect(() => {
+
+    (async () => {
+        let collection = itemsCollection;
+        if(categoryName) collection = itemsCollection.where("category", "==", categoryName);
+        const response = await collection.get()
+        setItems(response.docs.map(item => ({ id : item.id, ...item.data()})));
+    })();
+    /*if (!categoryName) {
+      setItems(database);
+    } else {
+      setItems(database.filter((item) => item.category === categoryName));
+    }*/
+  }, [categoryName]);
+
+  return <ItemList data={items} />;
+};
 
 export default ItemListContainer;
