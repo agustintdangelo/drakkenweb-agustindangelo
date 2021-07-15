@@ -7,7 +7,7 @@ import { useCartContext } from "../Context/CartContext.js";
 export const ItemDetail = (product) => {
   const { addToCart, realStock } = useCartContext();
   const stock = realStock(product);
-  const onAdd = (qty) => addToCart(product, qty); //addToCart(product, qty);
+  const onAdd = (qty) => addToCart(product, qty); 
   return (
     <Container>
       <Row>

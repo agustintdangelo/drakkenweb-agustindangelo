@@ -14,6 +14,7 @@ export const ItemDetailContainer = () => {
     })();
   }, [id]);
 
+  console.log(item);
   return (
     <div className="row">
       <ItemDetail {...item}></ItemDetail>

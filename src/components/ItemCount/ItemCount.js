@@ -7,6 +7,7 @@ export default function ItemCount({ stockItem, onAdd }) {
     const stock = stockItem;
     const [toAdd, setToAdd] = useState(stock ? 1 : 0);
     const [finalizarCompra, setFinalizarCompra] = useState(false);
+
     
     function compraFinalizada(cant) {
         onAdd(cant);
