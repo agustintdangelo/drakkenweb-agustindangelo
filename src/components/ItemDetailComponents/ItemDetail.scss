@@ -4,12 +4,13 @@
     width:50%;
 }
 
-.agregar-carrito{
-    display:flex;
-    flex-direction: column-reverse;
-    background:green;
-}
+
 
 .precio{
-    font-size: 80px;
+    font-size: 40px;
+}
+
+.detail{
+        transform: translateY(0px)!important;
+        opacity: 10 !important;
 }

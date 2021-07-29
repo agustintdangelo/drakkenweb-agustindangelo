@@ -9,6 +9,8 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ItemDetailContainer } from "./components/ItemDetailComponents/ItemDetailContainer";
 import { CartProvider } from "./components/Context/CartContext";
 
+import ConfirmBuy from "./components/ConfirmBuy/ConfirmBuy";
+
 function App() {
   return (
     <CartProvider>
@@ -29,6 +31,9 @@ function App() {
 
           <Route path="/cart">
             <Cart />
+          </Route>
+          <Route exact path="/ConfirmBuy">
+              <ConfirmBuy/>
           </Route>
         </Switch>
       </BrowserRouter>

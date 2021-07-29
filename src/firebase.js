@@ -12,4 +12,14 @@ const firebaseConfig = {
 
 const app = !firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
 
-export const itemsCollection = firebase.firestore(app).collection("items");
+const itemsCollection = firebase.firestore(app).collection("items");
+
+const ordersData = firebase.firestore(app).collection("orders");
+
+const dataBase = firebase.firestore(app);
+
+export{
+  itemsCollection,
+  ordersData,
+  dataBase
+}

@@ -11,6 +11,16 @@ export const CartProvider = ({ children }) => {
 
   const isInCart = (id) => cart.some((item) => item.id === id);
 
+  const deleteItem = (id) => setCart(cart.filter((item) => item.id !== id));
+
+  const totalPrice = () => {
+    let price = 0;
+    for (let item in cart) {
+      price += item.price;
+    }
+    return price;
+  };
+
   const addToCart = (item, quantity) => {
     if (isInCart(item.id)) {
       const newCart = cart.map((cartElement) => {
@@ -29,9 +39,18 @@ export const CartProvider = ({ children }) => {
     return foundItem ? item.stockItem - foundItem.quantity : item.stockItem;
   };
 
+
   return (
     <CartContext.Provider
-      value={{ cart, setCart, clearCart, addToCart, realStock }}
+      value={{
+        cart,
+        setCart,
+        clearCart,
+        addToCart,
+        realStock,
+        deleteItem,
+        totalPrice,
+      }}
     >
       {children}
     </CartContext.Provider>
