@@ -1,15 +1,15 @@
 import React from "react";
 import logoDrakken from "./logo.svg";
 import NavBar from "./components/NavBar/NavBar";
-import Cart from "./components/Cart/Cart";
+import Cart from "./Screens/Cart/Cart";
+import Carrousel from "./components/Carrousel/Carrousel";
+import Footer from "./components/Footer/Footer";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import ItemListContainer from "./components/ItemListContainer/ItemListContainer";
+import ItemListContainer from "./Screens/ItemListContainer/ItemListContainer";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { ItemDetailContainer } from "./components/ItemDetailComponents/ItemDetailContainer";
-import { CartProvider } from "./components/Context/CartContext";
-
-import ConfirmBuy from "./components/ConfirmBuy/ConfirmBuy";
+import { ItemDetailContainer } from "./Screens/ItemDetailContainer/ItemDetailContainer";
+import { CartProvider } from "./Context/CartContext";
 
 function App() {
   return (
@@ -18,22 +18,24 @@ function App() {
         <NavBar logo={logoDrakken} />
         <Switch>
           <Route exact path="/">
+            <Carrousel />
             <ItemListContainer />
+            <Footer />
           </Route>
 
           <Route path="/categories/:categoryName">
             <ItemListContainer />
+            <Footer />
           </Route>
 
           <Route path="/item/:id">
             <ItemDetailContainer />
+            <Footer />
           </Route>
 
           <Route path="/cart">
             <Cart />
-          </Route>
-          <Route exact path="/ConfirmBuy">
-              <ConfirmBuy/>
+            <Footer />
           </Route>
         </Switch>
       </BrowserRouter>

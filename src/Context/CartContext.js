@@ -7,18 +7,18 @@ export const useCartContext = () => useContext(CartContext);
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
 
-  const clearCart = () => setCart([]);
+  const [qty, setQty] = useState(0);
+
+  const clearCart = () => {
+    setCart([]);
+    setQty(0);
+  };
 
   const isInCart = (id) => cart.some((item) => item.id === id);
 
-  const deleteItem = (id) => setCart(cart.filter((item) => item.id !== id));
-
-  const totalPrice = () => {
-    let price = 0;
-    for (let item in cart) {
-      price += item.price;
-    }
-    return price;
+  const deleteItem = (id, quantity) => {
+    setCart(cart.filter((item) => item.id !== id));
+    setQty(qty - quantity);
   };
 
   const addToCart = (item, quantity) => {
@@ -29,8 +29,10 @@ export const CartProvider = ({ children }) => {
         } else return cartElement;
       });
       setCart(newCart);
+      setQty(qty + quantity);
     } else {
       setCart((prev) => [...prev, { ...item, quantity }]);
+      setQty(qty + quantity);
     }
   };
 
@@ -38,7 +40,6 @@ export const CartProvider = ({ children }) => {
     const foundItem = cart.find((product) => product.id === item.id);
     return foundItem ? item.stockItem - foundItem.quantity : item.stockItem;
   };
-
 
   return (
     <CartContext.Provider
@@ -49,7 +50,8 @@ export const CartProvider = ({ children }) => {
         addToCart,
         realStock,
         deleteItem,
-        totalPrice,
+        qty,
+        setQty,
       }}
     >
       {children}

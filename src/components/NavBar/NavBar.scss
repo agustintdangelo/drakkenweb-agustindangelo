@@ -19,3 +19,33 @@ nav{
 .bg-myViolet{
     background-color: rgba($color: #8548B3, $alpha: 1.0);
 }
+
+.inicio{
+    text-decoration: none;
+    color:white;
+    opacity: 0.5;
+}
+.inicio:hover{
+    text-decoration: none;
+    color:white;
+    opacity: 0.8;
+}
+
+.categories-style{
+    
+    text-decoration: none;
+    color: rgba($color: #8548B3, $alpha: 1.0);
+}
+
+.categories-style:hover{
+    text-decoration: none;
+    color: rgba($color: #8548B3, $alpha: 1.0);
+}
+
+
+.navbar-nav > li > .dropdown-menu {
+ 
+    color: #e5dbdb;
+     
+    background-color: #8548B3;
+}
