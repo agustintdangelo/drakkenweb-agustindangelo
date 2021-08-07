@@ -17,7 +17,7 @@ function App() {
       <BrowserRouter>
         <NavBar logo={logoDrakken} />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/drakkenweb-agustindangelo/">
             <Carrousel />
             <ItemListContainer />
             <Footer />

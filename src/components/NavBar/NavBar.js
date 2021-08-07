@@ -16,7 +16,7 @@ const NavBar = (props) => {
 
   return (
     <Navbar bg="myViolet" variant="dark" expand="lg">
-      <Link to={`/`}>
+      <Link to={`/drakkenweb-agustindangelo/`}>
         <Navbar.Brand className="titulo">
           <img
             alt="Logo de Drakken"
@@ -32,7 +32,7 @@ const NavBar = (props) => {
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
         
-        <Nav.Link><Link className="inicio" to={`/`}>Inicio </Link></Nav.Link>
+        <Nav.Link><Link className="inicio" to={`/drakkenweb-agustindangelo/`}>Inicio </Link></Nav.Link>
 
           
           

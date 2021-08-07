@@ -13,7 +13,7 @@ const Cart = () => {
 
   const activateForm = () => setFormActivate(true);
 
-  if (!cart.length) return <Redirect to="/" />;
+  if (!cart.length) return <Redirect to="/drakkenweb-agustindangelo/" />;
   return (
     <div className="d-flex justify-content-center flex-column">
       <div className="pb-5">
