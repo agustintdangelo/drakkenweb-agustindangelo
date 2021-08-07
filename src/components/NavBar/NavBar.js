@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Nav,
-  Navbar,
-  NavDropdown,
-} from "react-bootstrap";
+import { Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { Link, NavLink } from "react-router-dom";
 import CartWidget from "./CartWidget";
 import "./NavBar.scss";
@@ -31,50 +27,45 @@ const NavBar = (props) => {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-        
-        <Nav.Link><Link className="inicio" to={`/drakkenweb-agustindangelo/`}>Inicio </Link></Nav.Link>
+          <Nav.Link>
+            <Link className="inicio" to={`/drakkenweb-agustindangelo/`}>
+              Inicio{" "}
+            </Link>
+          </Nav.Link>
 
-          
-          
           <NavDropdown title="Categorías" id="basic-nav-dropdown">
-            <NavDropdown.Item>
-              <NavLink
-                className="categories-style"
-                to={`/categories/${ratones}`}
-              >
-                Mouses{" "}
-              </NavLink>
+            <NavDropdown.Item
+              style={{ color: "#8548B3" }}
+              as={Link}
+              to={`/categories/${ratones}`}
+            >
+              Mouses{" "}
             </NavDropdown.Item>
 
-            <NavDropdown.Item>
-              <NavLink
-                className="categories-style"
-                to={`/categories/${teclados}`}
-              >
-                Teclados
-              </NavLink>
+            <NavDropdown.Item
+              style={{ color: "#8548B3" }}
+              as={Link}
+              to={`/categories/${teclados}`}
+            >
+              Teclados
             </NavDropdown.Item>
 
-            <NavDropdown.Item>
-              <NavLink
-                className="categories-style"
-                to={`/categories/${procesadores}`}
-              >
-                Procesadores
-              </NavLink>
+            <NavDropdown.Item
+              style={{ color: "#8548B3" }}
+              as={Link}
+              to={`/categories/${procesadores}`}
+            >
+              Procesadores
             </NavDropdown.Item>
 
-            <NavDropdown.Item>
-              <NavLink
-                className="categories-style"
-                to={`/categories/${monitores}`}
-              >
-                Monitores
-              </NavLink>
+            <NavDropdown.Item
+              style={{ color: "#8548B3" }}
+              as={Link}
+              to={`/categories/${monitores}`}
+            >
+              Monitores
             </NavDropdown.Item>
           </NavDropdown>
-
-      
         </Nav>
 
         <CartWidget />
