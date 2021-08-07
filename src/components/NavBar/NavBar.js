@@ -42,7 +42,7 @@ const NavBar = (props) => {
                 className="categories-style"
                 to={`/categories/${ratones}`}
               >
-                Ratones{" "}
+                Mouses{" "}
               </NavLink>
             </NavDropdown.Item>
 
